@@ -19,7 +19,7 @@ class Footer extends React.Component {
     const { current } = this.state;
     return (
       <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" theme='dark' style={{ backgroundColor: '#5C082A', display:'flex', justifyContent:'flex-start',position:'fixed', width:'100vw', bottom:'0',height:'6%',zIndex: '10' }}>
-        <Menu.Item key="aboutus"  style={{ backgroundColor: '#5C082A',flexGrow:'3', paddingLeft:'3vw'}}>
+        <Menu.Item key="aboutus" disabled  style={{ backgroundColor: '#5C082A',flexGrow:'3', paddingLeft:'3vw'}}>
             <Link to='/about'>ABOUT US</Link>
         </Menu.Item>
         <Menu.Item key="CLING" disabled style={{ backgroundColor: '#5C082A',flexGrow:'3',}}>
