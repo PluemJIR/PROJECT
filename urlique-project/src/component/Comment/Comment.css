@@ -1,0 +1,8 @@
+.comment {
+    width: 100%;
+    /* border: 2px solid green; */
+    background-color: #DCC8D5;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}

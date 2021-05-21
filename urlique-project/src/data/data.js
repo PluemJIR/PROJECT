@@ -1,0 +1,52 @@
+const data = {
+    users: [
+        {
+            _id:'1',
+            image:'/user_image/1.jpeg',
+        },{
+            _id:'2',
+            image:'/user_image/2.jpeg',
+        },{
+            _id:'3',
+            image:'/user_image/3.jpeg',
+        },{
+            _id:'4',
+            image:'/user_image/4.jpeg',
+        },{
+            _id:'5',
+            image:'/user_image/5.jpeg',
+        },{
+            _id:'6',
+            image:'/user_image/6.jpeg',
+        },{
+            _id:'7',
+            image:'/user_image/7.jpeg',
+        },{
+            _id:'8',
+            image:'/user_image/8.jpeg',
+        },{
+            _id:'9',
+            image:'/user_image/9.jpeg',
+        },{
+            _id:'10',
+            image:'/user_image/10.jpeg',
+        },{
+            _id:'11',
+            image:'/user_image/11.jpeg',
+        },{
+            _id:'12',
+            image:'/user_image/12.jpeg',
+        },{
+            _id:'13',
+            image:'/user_image/13.jpeg',
+        },{
+            _id:'14',
+            image:'/user_image/14.jpeg',
+        },{
+            _id:'15',
+            image:'/user_image/15.jpeg',
+        },
+    ]
+}
+
+export default data

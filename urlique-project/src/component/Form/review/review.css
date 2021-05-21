@@ -1,0 +1,25 @@
+.container {
+    width:350px;
+    height: 380px;
+    border: 2px solid black;
+    display:'flex';
+    justify-content: space-around;
+    flex-direction: column;
+    font-family:'Montserrat';
+    border-radius: 10px;
+}
+
+h1 {
+    font-weight: bolder;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    /* border: 2px solid black; */
+}
+
+.form-container {
+    /* border: 2px solid black; */
+    width:85%;
+    height: 85%;
+    margin: 0 auto 0 auto;
+}

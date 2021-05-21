@@ -1,0 +1,49 @@
+.profile-container {
+    width: 100%;
+    /* border:5px solid green; */
+    height: 100%;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: white;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.info-profile {
+    /* border: 2px solid red; */
+    width: 40rem;
+    color: white;
+}
+
+.img-profile {
+    width: 20rem;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    position: relative;
+    right: 0;
+}
+
+.comment-section {
+    margin-top: 2rem;
+    width: 100%;
+    /* border: 2px solid green; */
+    background-color: #0D0311;
+
+}
+
+.comment-feed {
+    background-color: #0D0311;
+    padding: auto;
+    /* border: 2px solid green; */
+}
