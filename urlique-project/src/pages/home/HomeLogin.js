@@ -12,7 +12,7 @@ const contentStyle = {
     height:'110%',
     width:'100%', 
     backgroundColor:'#0D0311', 
-    padding:'75px',
+    padding:'75px 75px 100px 75px',
     display:'flex',
     alignItems:'center',
     flexWrap:'wrap',

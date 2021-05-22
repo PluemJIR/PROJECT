@@ -21,50 +21,34 @@ const contentStyle = {
     flexDirection:'column'
 }
 function callback(key) {
-    console.log(key);
+    // console.log(key);
 }
 
 
 const Booking = (props) => {
-    const [count, setCount] = useState(0)
-    const [inCount, setInCount] = useState(0)
-    const [hashtagCount, setHashtagCount] = useState(0)
-    const reservationCount = (n) => {
-        let count = n
-        setCount(count)
-    }
-    const incomingCount = (n) => {
-        let count = n
-        setInCount(count)
-    }
-
-    const tagCount = (n) => {
-        let count = n
-        setHashtagCount(count)
-    }
     return (
         <Layout className="layout" style={{backgroundColor:'#0D0311', paddingBottom:'10%'}}>
             <Navbar setRole={props.setRole}/>
             <Content style={contentStyle} >
                 <Tabs onChange={callback} type="card">
-                    <TabPane tab={<div style={{color:'black'}}>INCOMING BOOKING <Badge count={inCount} offset={[0,-5]}></Badge></div>} key="1">
+                    <TabPane tab={<div style={{color:'black'}}>INCOMING BOOKING </div>} key="1">
                         <Row>
-                            <Col span={12} offset={6}><BookingCard2 count={incomingCount}/></Col>
+                            <Col span={18} offset={3}><BookingCard2/></Col>
                         </Row>
                     </TabPane>
                     <TabPane tab={<div style={{color:'black'}}>MY BOOKING</div>} key="2">
                         <Row>
-                            <Col span={12} offset={6}><BookingCard1 count={reservationCount}/></Col>
+                            <Col span={18} offset={3}><BookingCard1 /></Col>
                         </Row>
                     </TabPane>
                     <TabPane tab={<div style={{color:'black'}}>ACCEPTED BOOKING</div>} key="3">
                         <Row>
-                            <Col span={12} offset={6}><BookingCard3/></Col>
+                            <Col span={18} offset={3}><BookingCard3/></Col>
                         </Row>
                     </TabPane>
-                    <TabPane tab={<div style={{color:'black'}}>HASHTAG BOOKING <Badge count={tagCount} dot offset={[0,-5]}></Badge></div>} key="4">
+                    <TabPane tab={<div style={{color:'black'}}>HASHTAG BOOKING </div>} key="4">
                         <Row>
-                            <Col span={12} offset={6}><BookingCard4 count={tagCount}/></Col>
+                            <Col span={18} offset={3}><BookingCard4/></Col>
                         </Row>
                     </TabPane>
                 </Tabs>

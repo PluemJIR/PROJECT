@@ -5,6 +5,8 @@ import Navbar from '../../component/Navbar/Navbar'
 import Footer from '../../component/Footer/Footer'
 import { Input, Space, Layout, Button, Modal, Form, Upload, message } from 'antd';
 import Usercard from '../../component/Usercard/Usercard'
+import localStorageService from '../../services/localStorageService'
+import jwtDecode from 'jwt-decode'
 
 const { Content } = Layout;
 
@@ -97,6 +99,16 @@ const Find = (props) => {
     const [inputDate, setInputDate] = useState('')
     const [inputTime, setInputTime] = useState('')
     const [inputHashtag, setInputHashtag] = useState('')
+    const [userN, setUserN] = useState('')
+
+    const getUsername = async () => {
+        const token = await localStorageService.getToken();
+        if (token) {
+            const user = jwtDecode(token)
+            setUserN(user.name)
+            // console.log(token)
+        }
+    }
 
     const onFinish = (values) => {
         console.log(values);
@@ -123,6 +135,7 @@ const Find = (props) => {
     };
 
     useEffect(() => {
+        getUsername();
         fetchUsers();
     }, [])
 
@@ -156,7 +169,7 @@ const Find = (props) => {
                                 style={{ fontFamily: 'Montserrat', fontWeight: 'regular', width: '35vw' }}
                             />
                             <Button onClick={goToResult} type="primary" size='large' style={{ fontFamily: 'Montserrat', fontWeight: 'Bold', color: '#5C082A', backgroundColor: '#F5F1E3', marginLeft: '1rem' }}>GO TO RESULT</Button>
-                            <Button type="primary" onClick={showModal1} size='large' style={{ fontFamily: 'Montserrat', fontWeight: 'Bold', color: '#5C082A', backgroundColor: '#F5F1E3', marginLeft: '1rem' }}>RESERVER BY HASHTAG</Button>
+                            <Button onClick={showModal1} type="primary" size='large' style={{ fontFamily: 'Montserrat', fontWeight: 'Bold', color: '#5C082A', backgroundColor: '#F5F1E3', marginLeft: '1rem' }}>RESERVER BY HASHTAG</Button>
                             <Modal title='Booking Order' visible={isModalVisible1} onOk={handleOk1} onCancel={handleCancel1} footer={null} width={350}>
                                 <div style={{ ...styleContainer }}>
                                     <Form {...layout} name="nest-messages" layout='vertical' onFinish={onFinish} validateMessages={validateMessages} style={{ width: '100%' }}>
@@ -226,13 +239,14 @@ const Find = (props) => {
                     <div style={divStyle4} className='result'>CHOOSE YOUR STANDEE</div>
                     <div style={divStyle3}>
                         {users.filter((val) => {
-                            if (searchTerm == '') {
+                            console.log(userN, val.username)
+                            if (searchTerm == '' && val.username !== userN) {
                                 return val
-                            } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase()) && val.username !== userN) {
                                 return val
-                            } else if (val.hashtag.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            } else if (val.hashtag.toLowerCase().includes(searchTerm.toLowerCase()) && val.username !== userN) {
                                 return val
-                            } else if (val.username.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            } else if (val.username.toLowerCase().includes(searchTerm.toLowerCase()) && val.username !== userN) {
                                 return val
                             }
                         }).map(user => (

@@ -10,5 +10,7 @@ router.post('/login', realUserControllers.loginUser)
 router.get('/',  realUserControllers.getUsers);
 router.get('/:username', realUserControllers.getUserByUsername);
 router.put('/', authentication, realUserControllers.updateProfile);
+router.get('/:id', realUserControllers.getUserById);
+
 
 module.exports = router

@@ -59,9 +59,9 @@ function Navbar(props) {
       <Link to='/finder'><Menu.Item key="search" icon={<SearchOutlined />} style={{ backgroundColor: '#5C082A' }} title='FINDER'>
         FINDER
       </Menu.Item></Link>
-      <SubMenu key="SubMenu" icon={<UserOutlined />} title={<span>PROFILE<Badge count={count} dot offset={[0,-5]}></Badge></span>} style={{ backgroundColor: '#5C082A' }}>
+      <SubMenu key="SubMenu" icon={<UserOutlined />} title={<span>PROFILE</span>} style={{ backgroundColor: '#5C082A' }}>
         <Menu.Item key="setting:1" ><Link to='/profile'>YOUR PROFILE</Link></Menu.Item>
-        <Menu.Item key="setting:2" onClick={fetchReservation}><Link to='/booking'>BOOKING<Badge count={count} offset={[10,0]}></Badge></Link></Menu.Item>
+        <Menu.Item key="setting:2" onClick={fetchReservation}><Link to='/booking'>BOOKING</Link></Menu.Item>
         <Menu.Item key="setting:3" onClick={logout}>SIGN OUT</Menu.Item>
       </SubMenu>
     </Menu>

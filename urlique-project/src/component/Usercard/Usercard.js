@@ -8,7 +8,6 @@ const { Meta } = Card;
 
 const Usercard = (props) => {
     const [avgScore, setAvgScore] = useState(0)
-    // let avgScore 
 
     const fetchScore = async () => {
         let ownsReview = []

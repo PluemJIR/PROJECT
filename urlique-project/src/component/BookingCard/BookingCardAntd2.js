@@ -31,7 +31,6 @@ const BookingCardAntd2 = (props) => {
                 n +=1
             }
         })
-        props.count(n)
         setBooking(myBooking)
     }
 
@@ -63,13 +62,13 @@ const BookingCardAntd2 = (props) => {
 
     const declineBooking = async (id) => {
         await axios.delete(`/reservation/${id}`);
-        await getAlldata()
+        await fetchReservation()
     }
 
     const acceptBooking = async (id) => {
         const newStatus = 'ACCEPTED'
         await axios.put(`/reservation/${id}`, {option : newStatus})
-        await getAlldata()
+        await fetchReservation()
     }
 
     useEffect(() => {
@@ -84,27 +83,34 @@ const BookingCardAntd2 = (props) => {
             renderItem={item => (
                 <List.Item
                     key={item.id}
-                    style={{height:'180px', borderRadius:'5px', backgroundColor:'white', marginBottom:'20px', width:'100%'}}
+                    style={{height:'240px', borderRadius:'5px', backgroundColor:'white', marginBottom:'20px', width:'100%'}}
                     extra={
-                        <div style={{border:'3px solid black', height:'100%', backgroundColor:'#5C082A', width:'100%'}}>
-                            <div style={{color:'white'}}><UserOutlined/> {item.number} || {item.date}</div>
+                        <div style={{padding:'10px', height:'100%', backgroundColor:'tomato', width:'130px', borderBottom:'15px solid black'}}>
+                            <div style={{color:'white', fontWeight:'Bold'}}>REV. ID : {item.id}</div>
                             <br></br>
-                            <div style={{color:'white'}}>STATUS : {item.option}</div>
+                            <div style={{color:'white', fontWeight:'Bold'}}>  
+                                <span>{item.option}</span></div>
                             <hr></hr>
                             <div style={{color:'white'}}>STANDEE ID : #{item.toId}</div>
                         </div>
                     }
                 >
                     <List.Item.Meta
-                        style={{border:'3px solid black', height:'70%', backgroundColor:'#5C082A', padding:'10px 10px '}}
-                        title={<div style={{color:'white'}}>Place : <span style={{fontWeight:'bold', color:'white'}}>{item.restaurant}</span> #<span style={{fontWeight:'bold', color:'white'}}>{item.id}</span></div>}
-                        description={<div><div style={{color:'white'}}>NOTE : {item.description}</div>
-                                     <div style={{color:'white'}}>FROM : {item.fromUsername}</div></div>}
+                        style={{ height:'80%', backgroundColor:'tomato', padding:'20px 20px', borderBottom:'3px solid black', borderRight:'20px solid black'}}
+                        title={<div style={{color:'white'}}><span style={{fontWeight:'bold', color:'white', fontSize:'3rem'}}>{item.restaurant}</span></div>}
+                        description={<div><div style={{color:'white', fontSize:'2rem', display:'flex', justifyContent:'space-between'}}>
+                            <span>{item.date}</span> 
+                            <span style={{color:'white'}}> <UserOutlined/> {item.number}</span>
+                            <span></span>
+                            </div>
+                            <div style={{color:'white', fontSize:'1rem'}}>NOTE : {item.description}</div></div>}
                     />
-                    <div style={{display:'flex', justifyContent:'space-around'}}>
+                    <div style={{display:'flex', justifyContent:'space-between'}}>
                         Booking Date : {(item.createdAt.slice(0,10)) + ' ' + (item.createdAt.slice(11,19))}  
-                        <Button type="primary" onClick={() => acceptBooking(item.id)}>ACCEPT</Button>
-                        <Button type="danger" onClick={() => declineBooking(item.id)} >DECLINE</Button>
+                        <span>
+                            <Button type="primary" style={{marginRight:'10px'}} onClick={() => acceptBooking(item.id)}>ACCEPT</Button>  
+                            <Button type="danger" onClick={() => declineBooking(item.id)} >DECLINE</Button>
+                        </span>
                     </div>
                     
                 </List.Item>

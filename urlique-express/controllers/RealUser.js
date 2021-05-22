@@ -13,6 +13,12 @@ const getUserByUsername = async (req, res) => {
     res.status(200).send(targetUser);
 };
 
+const getUserById = async (req, res) => {
+    const targetId =String(req.params.id);
+    const targetUser = await db.RealUsers.findOne({ where: { id: targetId } });
+    res.status(200).send(targetUser);
+};
+
 const registerUser = async (req, res) => {
     const { username, password, name, hashtag, email, description, pri } = req.body;
     const targetUser = await db.RealUsers.findOne({ where: { username: username } })
@@ -88,5 +94,6 @@ module.exports = {
     loginUser,
     getUsers,
     getUserByUsername,
-    updateProfile
+    updateProfile,
+    getUserById
 }
