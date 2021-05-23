@@ -26,13 +26,13 @@ class Footer extends React.Component {
         © CLING, Inc. 2020.
         </Menu.Item>
         <Menu.Item key="facebook" icon={<FacebookOutlined />} style={{ backgroundColor: '#5C082A'}}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"></a>
+          <a href="https://www.facebook.com/Jirayu.Pluem/" target="_blank" rel="noopener noreferrer"></a>
         </Menu.Item>
         <Menu.Item key="instagram" icon={<InstagramOutlined />} style={{ backgroundColor: '#5C082A', margin:'0'}}>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"></a>
+          <a href="https://www.instagram.com/pluem_jirayu/?hl=th" target="_blank" rel="noopener noreferrer"></a>
         </Menu.Item>
         <Menu.Item key="github" icon={<GithubOutlined />} style={{ backgroundColor: '#5C082A'}}>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer"></a>
+          <a href="https://github.com/PluemJIR" target="_blank" rel="noopener noreferrer"></a>
         </Menu.Item>
       </Menu>
     );

@@ -21,13 +21,13 @@ const contentStyle = {
     flexDirection:'column'
 }
 function callback(key) {
-    // console.log(key);
+    console.log(key);
 }
 
 
 const Booking = (props) => {
     return (
-        <Layout className="layout" style={{backgroundColor:'#0D0311', paddingBottom:'10%'}}>
+        <Layout className="layout" style={{backgroundColor:'#0D0311', paddingBottom:'10%',}}>
             <Navbar setRole={props.setRole}/>
             <Content style={contentStyle} >
                 <Tabs onChange={callback} type="card">
