@@ -34,6 +34,7 @@ class Home extends React.Component {
                 <Content style={contentStyle} >
                     <Banner/>
                     <div style={{textAlign:'center',width:'40rem'}}>
+                        <div>start</div>
                         <img src={logo} style={{width:'100%',}}></img>
                         <h3 style={h3Style}><span style={{color:'#BE1D37'}}>TAKE </span>YOUR TIME <span style={{color:'#BE1D37'}}>ENJOY</span> YOUR MEAL</h3>
                         <h3 style={h3Style}>เพราะเรารู้ว่า <span style={{color:'#BE1D37', fontSize:'1.7rem'}}> เวลา</span> ของคุณสำคัญ</h3>
